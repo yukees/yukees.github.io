@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap');
+        body{
+            background-color: #131316;
+            color: #ffff;
+            font-family: 'Poppins',sans-serif;
+            padding: 0;
+            margin:0;
+        }
+        section{
+            display: grid;
+            place-items: center;
+            align-items: center;
+        }
+        h1{
+            display: grid;
+            place-items: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .hidden{
+            opacity: 0;
+            filter: blur(5px);
+            transition: all 3s;
+        }
+        .show{
+            opacity: 1;
+            filter: blur(0);
+            transition-delay: 200ms;
+        }
+        .first{
+            margin:0;
+            background-image: url(assets/Dashain.jpg); 
+            background-repeat: no-repeat; 
+            background-size: cover;
+        }
+        .second{
+            margin: 0;
+            background-image: url(assets/ping.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* background-position: 0px -100px; */
+        }
+
+        .third{
+            margin:0;
+            background-image: url(assets/third.jpg); 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            font-size: 20px;
+        }    </style>
+</head>
+<body>
+    <h1 class="hidden first">Dashain (26th to 8th October)</h1>
+    <h1 class="hidden second">I Hope You Had A Great Dashain!</h1>
+    <section class="hidden third">
+        <p>Dashain (also pronounced as Dashain) is the longest Hindu festival in Nepal, traditionally celebrated for two weeks with prayers and offerings to Durga, the Universal Mother Goddess. The great harvest festival of Nepal, Dashain is a time for family reunions, exchange of gifts and blessings, and elaborate pujas. Dashain honors the Goddess Durga, who was created out of the shakti or energy of all the gods, armed with weapons from each of them.</p>
+        <p>Goddess Durga, symbolizing valor and prowess, is worshipped and offered sacrifices to ensure the devotees' progress and prosperity. During the first ten days, pilgrims flock to various river confluences early in the morning and sacred shrines in the evening. Ghatasthapana, Phool Pati, Mahaastami, Nawami and Vijaya Dashami are the series of the events under Dashain each marked with a different set of rituals.</p>
+        <p>During Dashain, men and women in their fineries visit their elders to seek tika (a dab of red vermilion mixed with yogurt and rice) accompanied by blessings. Sword precessions (Paayaa) are also held in various part of the Kathmandu Valley. A large number of animals are officially sacrificed at Hanuman Dhoka during Nawami which is attended by officials, invitees and visitors.</p>
+        <p>During the ninth day, the Taleju Temple which is normally out of bounds is also open to the public. The last day, known as Kojagrat Purnima, is the full moon. New clothes, home visits, grand feasts, kite flying and village swings are the highlights of Dashain. Around this time the population of Kathmandu is greatly reduced as many head home to various parts of the country.
+        </p>
+        <p>On the tenth day known as Tika, people are seen moving around with their foreheads covered with rice tika, wearing new clothes. There is much feasting as people visit relatives’ homes to receive tika , blessings and also money. </p>
+    </section>
+</body>
+<script>
+    alert("Made By Yukesh Lama")
+    const observer = new IntersectionObserver((entries) =>{
+    entries.forEach((entry)=>{
+        console.log(entry)
+            if (entry.isIntersecting){
+            entry.target.classList.add('show');
+            }else{
+            entry.target.classList.remove('show');
+            }
+        });
+    });
+const hiddenElements = document.querySelectorAll('.hidden');
+hiddenElements.forEach((el)=> observer.observe(el));
+</script>
+</html>
